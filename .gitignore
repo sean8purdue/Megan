@@ -1,0 +1,24 @@
+# Executables
+bin/*
+
+# Debug Files
+*.dSYM/
+#.idea/*.*
+
+# Library
+/node_modules/*
+.idea/*
+package.json
+
+# Others
+*.swp
+*.swo
+*.swn
+.*.sw[a-z]
+*~
+.*~
+*#
+.*#
+*.o
+*.so
+/Megan.iml
