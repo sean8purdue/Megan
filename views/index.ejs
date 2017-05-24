@@ -30,7 +30,10 @@
     <!--jason file object of object data-->
   <ul>
       <% videodata.categories.forEach(function(item){ %>
-            <li><%= item.categoryName %></li>
+            <li>
+                <%= item.categoryName %>
+                <a href="https://www.thenewboston.com/videos_food.php?cat=<%=item.categoryID%>"><%= item.categoryName %></a>
+            </li>
       <% }); %>
   </ul>
 
