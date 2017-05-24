@@ -5,6 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// write to json file test
+var fs = require('fs');
+var words = fs.readFileSync('words.json');
+console.log(words);
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
