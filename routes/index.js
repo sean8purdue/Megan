@@ -79,5 +79,29 @@ function addWord(req, res, next) {
 
 }
 
+// search word
+router.get('/nsearch/:word/', searchWord);
+
+function searchWord(req, res, next) {
+    var data = req.params;
+    var word = data.word;
+    var reply;
+
+    if (words[word]) {
+        reply = {
+            status: "found",
+            word: word,
+            score: words[word]
+        }
+    } else {
+        reply = {
+            status: "not found in words",
+            word: word
+        }
+    }
+
+    res.send(reply);
+}
+
 
 module.exports = router;
