@@ -55,5 +55,23 @@ function sendAll(req, res, next) {
     res.send(words);
 }
 
+// add user input word to self define object
+router.get('/add/:word/:score', addWord);
+
+function addWord(req, res, next) {
+    var data = req.params;
+    var word = data.word;
+    var score = data.score;
+
+    words[word] = score;
+
+    var reply = {
+        msg: "Thank you for your word."
+    }
+
+    res.send(reply);
+
+}
+
 
 module.exports = router;
