@@ -11,4 +11,35 @@ router.get('/', function(req, res, next) {
   });
 });
 
+// communicate with user: input and output
+router.get('/flower', sendFlower);
+
+function sendFlower(req, res, next) {
+    res.send("I love flowers");
+
+}
+
+// get user input as parameter
+router.get('/search/:flower', sendFlower2);
+
+function sendFlower2(req, res, next) {
+    var data = req.params;
+    res.send("I love " + data.flower);
+}
+
+// get multiple user input as parameter
+router.get('/search/:flower/:num', sendFlower3);
+
+function sendFlower3(req, res, next) {
+    var data = req.params;
+    var num = data.num;
+    var reply = "";
+    for (var i = 0; i < num; i++) {
+        reply += "I love " + data.flower + '\n';
+    }
+
+    res.send(reply);
+}
+
+
 module.exports = router;
