@@ -41,5 +41,19 @@ function sendFlower3(req, res, next) {
     res.send(reply);
 }
 
+// Self define object
+var words = {
+    "rainbow": 5,
+    "unicorn": 3,
+    "doom": -3,
+    "gloom": -2
+}
+
+router.get('/all', sendAll);
+
+function sendAll(req, res, next) {
+    res.send(words);
+}
+
 
 module.exports = router;
