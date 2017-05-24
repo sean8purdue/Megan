@@ -24,13 +24,21 @@
         <% } %>
     </ul>
 
+    <!--jason file object data-->
   <p> <%= videodata.categoryName %> </p>
 
+    <!--jason file object of object data-->
   <ul>
       <% videodata.categories.forEach(function(item){ %>
             <li><%= item.categoryName %></li>
       <% }); %>
   </ul>
+
+    <ul>
+        <% videodata.categories.forEach(function(item){ %>
+        <li> videoCount = <%= item.videosCount %></li>
+        <% }); %>
+    </ul>
 
   </body>
 </html>
