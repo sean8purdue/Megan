@@ -35,7 +35,7 @@ function sendFlower3(req, res, next) {
     var num = data.num;
     var reply = "";
     for (var i = 0; i < num; i++) {
-        reply += "I love " + data.flower + '\n';
+        reply += "I love " + data.flower + "<br/>";
     }
 
     res.send(reply);
