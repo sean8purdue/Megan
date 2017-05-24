@@ -26,5 +26,11 @@
 
   <p> <%= videodata.categoryName %> </p>
 
+  <ul>
+      <% videodata.categories.forEach(function(item){ %>
+            <li><%= item.categoryName %></li>
+      <% }); %>
+  </ul>
+
   </body>
 </html>
