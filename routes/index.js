@@ -11,4 +11,12 @@ router.get('/', function(req, res, next) {
   });
 });
 
+// communicate with user: input and output
+router.get('/flower', sendFlower);
+
+function sendFlower(req, res, next) {
+    res.send("I love flowers");
+
+}
+
 module.exports = router;
