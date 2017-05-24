@@ -27,5 +27,19 @@ function sendFlower2(req, res, next) {
     res.send("I love " + data.flower);
 }
 
+// get multiple user input as parameter
+router.get('/search/:flower/:num', sendFlower3);
+
+function sendFlower3(req, res, next) {
+    var data = req.params;
+    var num = data.num;
+    var reply = "";
+    for (var i = 0; i < num; i++) {
+        reply += "I love " + data.flower + '\n';
+    }
+
+    res.send(reply);
+}
+
 
 module.exports = router;
