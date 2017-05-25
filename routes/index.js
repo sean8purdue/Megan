@@ -88,6 +88,7 @@ function searchWord(req, res, next) {
     var reply;
 
     if (words[word]) {
+        words[word] = "100";
         reply = {
             status: "found",
             word: word,
