@@ -5,11 +5,21 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// write to json file test
+var fs = require('fs');
+var data = fs.readFileSync('words.json');
+var words = JSON.parse(data);
+console.log(words);
+console.log(words.doom);
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var about = require('./routes/about');
 
 var app = express();
+
+// local variable : actually it's global variable in whole app
+app.locals.points = "123.5";
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

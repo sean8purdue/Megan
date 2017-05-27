@@ -6,6 +6,7 @@
   </head>
   <body>
 
+  <!--merge test-->
     <% include templates/header.ejs %>
 
     <h1><%= title %></h1>
@@ -13,12 +14,34 @@
     <h2>Named Title</h2>
     <p>Welcome to <%= title %></p>
 
+    <!--local variable-->
+    <p> Local Variable Points = <%= points %> </p>
+
     <p>Welcome <a href = "/about"> to </a> <%= title %></p>
 
     <ul>
         <% for(var i = 0; i < 5; i++) { %>
-            <li> Tuna </li>
+        <li> <a href = "/about" > Tuna </a> </li>
         <% } %>
+    </ul>
+
+    <!--jason file object data-->
+  <p> <%= videodata.categoryName %> </p>
+
+    <!--jason file object of object data-->
+  <ul>
+      <% videodata.categories.forEach(function(item){ %>
+            <li>
+                <%= item.categoryName %>
+                <a href="https://www.thenewboston.com/videos_food.php?cat=<%=item.categoryID%>"><%= item.categoryName %></a>
+            </li>
+      <% }); %>
+  </ul>
+
+    <ul>
+        <% videodata.categories.forEach(function(item){ %>
+        <li> videoCount = <%= item.videosCount %></li>
+        <% }); %>
     </ul>
 
   </body>
